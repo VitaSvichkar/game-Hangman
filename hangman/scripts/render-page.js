@@ -1,10 +1,13 @@
-export default function renderPage() {
+import refreshGame from './refresh-game.js';
+
+export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
+
   const canvas = document.createElement('canvas');
-  canvas.width = 500;
-  canvas.height = 500;
+  canvas.width = 600;
+  canvas.height = 600;
   const ctx = canvas.getContext('2d');
-  const word = 'canvas';
+
   const wrap = document.createElement('div');
   wrap.classList.add('wrap');
 
@@ -16,20 +19,19 @@ export default function renderPage() {
 
   const hintWrap = document.createElement('div');
   hintWrap.classList.add('hint-wrap');
-
   const hint = document.createElement('p');
-
   const mistakesWrap = document.createElement('div');
   mistakesWrap.classList.add('mistakes-wrap');
 
   const keyboard = document.createElement('div');
   keyboard.classList.add('keyboard');
 
+  hintWrap.append(hint, mistakesWrap);
   content.append(chars, hintWrap, keyboard);
   wrap.append(canvas, content);
   body.append(wrap);
 
-  console.log('page');
+  refreshGame(questionsArray);
 
   // virtual keyboard
   function showKeyboard() {
@@ -41,13 +43,4 @@ export default function renderPage() {
     }
   }
   showKeyboard();
-
-  function showChar() {
-    for (let i = 0; i < word.length; i += 1) {
-      const char = document.createElement('li');
-      char.innerText = '_';
-      chars.append(char);
-    }
-  }
-  showChar();
 }

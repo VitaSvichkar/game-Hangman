@@ -13,8 +13,9 @@ export default function eventKey(word) {
     guessWord.forEach((el, index) => {
       if (el === key) {
         indexChar.push(index);
-        showChar(indexChar, key);
+        showChar(indexChar, key, guessWord);
       }
+      // ошибка +1
     });
   }
 }
