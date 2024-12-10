@@ -1,6 +1,7 @@
-import renderPage from './scripts/render-page.js';
+import renderPage from './scripts/renderPage.js';
 import { questions } from './scripts/questions.js';
-import getRandomIndex from './scripts/get-random-index.js';
+import getRandomIndex from './scripts/getRandomIndex.js';
+
 getRandomIndex(questions);
 console.log(questions);
 renderPage(questions);

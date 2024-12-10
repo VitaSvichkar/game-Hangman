@@ -1,4 +1,4 @@
-import eventKey from './event-key.js';
+import eventKey from './eventKeyAndCheckChar.js';
 
 export default function refreshGame(questions) {
   let ind = 0;

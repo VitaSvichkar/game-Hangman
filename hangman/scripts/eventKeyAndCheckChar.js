@@ -1,5 +1,5 @@
-import showChar from './show-char.js';
-import checkErrorsCount from './check-errors-count.js';
+import showChar from './showChar.js';
+import checkErrorsCount from './checkErrorsCount.js';
 
 let word;
 let count = 0;

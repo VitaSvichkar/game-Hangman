@@ -1,4 +1,4 @@
-import isWordGuess from './is-word-guess.js';
+import isWordGuess from './isWordGuess.js';
 
 export default function showChar(array, el, word) {
   const items = [...document.querySelectorAll('.item')];

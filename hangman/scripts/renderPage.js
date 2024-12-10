@@ -1,5 +1,5 @@
-import refreshGame from './refresh-game.js';
-import { checkChar } from './event-key.js';
+import refreshGame from './refreshGame.js';
+import { checkChar } from './eventKeyAndCheckChar.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
