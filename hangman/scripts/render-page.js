@@ -1,4 +1,5 @@
 import refreshGame from './refresh-game.js';
+import { checkChar } from './event-key.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
@@ -7,6 +8,23 @@ export default function renderPage(questionsArray) {
   canvas.width = 600;
   canvas.height = 600;
   const ctx = canvas.getContext('2d');
+
+  const modalWrap = document.createElement('div');
+  modalWrap.classList.add('modal-wrap');
+
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  const resultText = document.createElement('h3');
+  resultText.classList.add('modal-result');
+
+  const secretWord = document.createElement('p');
+  secretWord.classList.add('modal-secret-word');
+  secretWord.innerHTML = `<span class="modal-secret-word">rkogirn</span>`;
+
+  const button = document.createElement('button');
+  button.classList.add('modal-btn');
+  button.innerText = 'Try again';
 
   const wrap = document.createElement('div');
   wrap.classList.add('wrap');
@@ -29,7 +47,9 @@ export default function renderPage(questionsArray) {
   hintWrap.append(hint, mistakesWrap);
   content.append(chars, hintWrap, keyboard);
   wrap.append(canvas, content);
-  body.append(wrap);
+  modal.append(resultText, secretWord, button);
+  modalWrap.append(modal);
+  body.append(wrap, modalWrap);
 
   refreshGame(questionsArray);
 
@@ -43,4 +63,12 @@ export default function renderPage(questionsArray) {
     }
   }
   showKeyboard();
+
+  button.addEventListener('click', () => {
+    modalWrap.classList.remove('modal-visible');
+  });
+
+  window.addEventListener('keydown', (e) => {
+    checkChar(e.key);
+  });
 }

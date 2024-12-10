@@ -1,14 +1,14 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   background-color: #121212;
   font-family: "Sour Gummy", sans-serif;
   font-size: 20px;
-  padding: 0;
-  margin: 0;
   color: rgb(249, 245, 241);
 }
 
@@ -37,7 +37,6 @@ ul {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 0;
   gap: 20px;
   font-size: 90px;
   border-radius: 20px;
@@ -98,10 +97,10 @@ ul {
           box-shadow: 4px 4px 1px rgba(78, 67, 150, 0.6784313725);
   border-radius: 50px;
   cursor: pointer;
-  -webkit-transition: background-color 0.1s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
-  transition: background-color 0.1s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
-  transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease;
-  transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+  -webkit-transition: background-color 0.2s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: background-color 0.2s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
 }
 .keyboard div:hover {
   background-color: #9b8eea;
@@ -114,4 +113,85 @@ ul {
   -webkit-box-shadow: 2px 2px 1px rgba(78, 67, 150, 0.6784313725);
           box-shadow: 2px 2px 1px rgba(78, 67, 150, 0.6784313725);
   background-color: #8473f3;
+}
+
+.modal-wrap {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(25, 24, 24, 0.7098039216);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 20px;
+  background-color: rgba(56, 56, 58, 0.553);
+  border: 1px solid #40377b;
+  padding: 10px;
+  width: 400px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+.modal .modal-result {
+  font-size: 30px;
+  color: #fa962b;
+}
+.modal .modal-btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: "Indie Flower", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(249, 245, 241);
+  text-shadow: 2px 1px rgb(40, 40, 44);
+  border-radius: 50px;
+  background-color: #fbab54;
+  -webkit-box-shadow: 4px 4px 1px #9e5a11;
+          box-shadow: 4px 4px 1px #9e5a11;
+  padding: 10px;
+  -webkit-transition: background-color 0.2s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: background-color 0.2s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+}
+.modal .modal-btn:hover {
+  background-color: #fa962b;
+}
+.modal .modal-btn:active {
+  -webkit-transform: translate(3px, 3px);
+      -ms-transform: translate(3px, 3px);
+          transform: translate(3px, 3px);
+  -webkit-box-shadow: 2px 2px 1px #9e5a11;
+          box-shadow: 2px 2px 1px #9e5a11;
+  background-color: rgba(250, 144, 30, 0.7450980392);
+}
+
+.modal-visible {
+  opacity: 1;
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */

@@ -4,7 +4,7 @@ export default function refreshGame(questions) {
   let ind = 0;
   const answer = questions[ind].answer;
   const question = questions[ind].hint;
-  const hint = document.querySelector('p');
+  const hint = document.querySelector('.hint-wrap p');
   console.log(question);
   hint.innerHTML = `<span class="hint-accent">Hint: </span>${question}`;
   const mistakes = document.querySelector('.mistakes-wrap');
