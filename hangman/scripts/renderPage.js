@@ -1,5 +1,6 @@
 import refreshGame from './refreshGame.js';
 import logic from './logic.js';
+import showKeyboard from './keyboard.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
@@ -53,21 +54,6 @@ export default function renderPage(questionsArray) {
   modalWrap.append(modal);
   body.append(wrap, modalWrap);
 
-  logic(questionsArray);
-
-  // virtual keyboard
-  function showKeyboard() {
-    for (let i = 65; i <= 90; i += 1) {
-      const keyWrap = document.createElement('div');
-      const char = String.fromCharCode(i);
-      keyWrap.innerText = char;
-      keyboard.append(keyWrap);
-    }
-  }
   showKeyboard();
-
-  button.addEventListener('click', () => {
-    modalWrap.classList.remove('modal-visible');
-    refreshGame(questionsArray);
-  });
+  logic(questionsArray);
 }

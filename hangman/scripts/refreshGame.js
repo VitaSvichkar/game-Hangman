@@ -6,19 +6,25 @@ export default function refreshGame(questions) {
   return function () {
     const gameState = {
       word: questions[index].answer,
+      hint: questions[index].hint,
       count: 0,
-      guessedChars: new Set(),
+      pressedChars: new Set(),
       displayedWord: [],
       isGamePaused: false,
       isGameWon: false,
       isGameLost: false,
     };
 
-    const question = questions[index].hint;
     index += 1;
+
+    if (index >= questions.length) {
+      console.log(index);
+      index = 0;
+      console.log(index);
+    }
+
     const hint = document.querySelector('.hint-wrap p');
-    console.log(question);
-    hint.innerHTML = `<span class="hint-accent">Hint: </span>${question}`;
+    hint.innerHTML = `<span class="hint-accent">Hint: </span>${gameState.hint}`;
     const mistakes = document.querySelector('.mistakes-wrap');
     mistakes.innerHTML = `<span class="mistakes">Incorrect guesses: <span class="count">${gameState.count}</span> / 6 </span> `;
 

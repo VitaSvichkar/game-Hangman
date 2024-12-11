@@ -63,7 +63,7 @@ ul {
   border-radius: 30px;
   box-shadow: 5px 5px 1px #2f2760ad, -1px -1px 1px #4e4396ad;
 
-  div {
+  .key {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,22 +73,32 @@ ul {
     width: 50px;
     height: 50px;
     background-color: #9a8eeaad;
-    box-shadow: 4px 4px 1px #4e4396ad;
+    background-color: #9a8eeac8;
+    box-shadow: 5px 5px 1px #4e4396ad;
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease,
-      box-shadow 0.1s ease, text-shadow 0.1s ease;
+      box-shadow 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
 
     &:hover {
-      background-color: #9b8eea;
+      background-color: #b3aaf0;
     }
 
     &:active {
       transform: translate(3px, 3px);
       text-shadow: 2px 1px rgb(56, 56, 58);
       box-shadow: 2px 2px 1px #4e4396ad;
-      background-color: #8473f3;
+      background-color: #54506d;
     }
+  }
+
+  .key-inactive {
+    pointer-events: none;
+    transform: translate(3px, 3px);
+    text-shadow: 2px 1px rgb(56, 56, 58);
+    box-shadow: 2px 2px 1px#4e4396ad;
+    background-color: #54506d;
+    color: rgba(217, 214, 229, 0.71);
   }
 }
 

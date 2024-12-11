@@ -1,13 +1,23 @@
 import showModal from './showModal.js';
 
-export function checkChar(k, state) {
+export function checkChar(e, state) {
   const countMistakes = document.querySelector('.count');
-  const key = k.toUpperCase();
+  const key = e.key ? e.key.toUpperCase() : e.target.innerText;
+  const keyKeyboard = [...document.querySelectorAll('.key')];
+  const keyStyle = keyKeyboard.filter((item) => item.innerText === key);
   const word = state.word.toUpperCase();
+  let correctGuess = false;
 
   if (state.isGamePaused) return;
 
-  let correctGuess = false;
+  if ([...state.pressedChars].includes(key)) {
+    correctGuess = true;
+    return;
+  }
+
+  state.pressedChars.add(key);
+
+  keyStyle.forEach((el) => el.classList.add('key-inactive'));
 
   for (let i = 0; i < word.length; i += 1) {
     if (!/^[A-Z]$/.test(key)) {
@@ -16,7 +26,6 @@ export function checkChar(k, state) {
 
     if (word[i] === key) {
       state.displayedWord[i].innerText = key;
-      state.guessedChars.add(key);
       correctGuess = true;
     }
   }
