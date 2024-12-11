@@ -23,6 +23,10 @@ body {
       justify-content: space-around;
   gap: 20px;
 }
+.wrap > * {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
 
 canvas {
   background-color: rebeccapurple;
@@ -35,28 +39,65 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 20px;
-  font-size: 90px;
+  gap: 15px;
+  font-size: 70px;
   border-radius: 20px;
   color: #ff901a;
   list-style: none;
 }
 
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 15px;
+}
 .content > * {
-  margin-bottom: 30px;
+  -ms-flex-preferred-size: 33.3333333333%;
+      flex-basis: 33.3333333333%;
   padding: 10px;
 }
 
 .hint-wrap {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.hint-wrap > * {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .hint-accent,
 .mistakes {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
+}
+
+.hint-accent,
+.style-count {
+  color: #fa962b;
 }
 
 .keyboard {
@@ -90,41 +131,41 @@ ul {
   font-size: 25px;
   color: rgb(249, 245, 241);
   text-shadow: 2px 1px rgb(84, 84, 90);
-  width: 50px;
-  height: 50px;
-  background-color: rgba(154, 142, 234, 0.6784313725);
-  background-color: rgba(154, 142, 234, 0.7843137255);
-  -webkit-box-shadow: 5px 5px 1px rgba(78, 67, 150, 0.6784313725);
-          box-shadow: 5px 5px 1px rgba(78, 67, 150, 0.6784313725);
+  width: 46px;
+  height: 46px;
+  background-color: rgba(20, 20, 20, 0.7843137255);
+  border: 1px solid rgba(206, 155, 4, 0.348);
+  -webkit-box-shadow: 5px 5px rgba(22, 12, 3, 0.9098039216);
+          box-shadow: 5px 5px rgba(22, 12, 3, 0.9098039216);
   border-radius: 50px;
   cursor: pointer;
-  -webkit-transition: background-color 0.2s ease, text-shadow 0.1s ease, color 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
-  transition: background-color 0.2s ease, text-shadow 0.1s ease, color 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, color 0.1s ease, -webkit-transform 0.1s ease, -webkit-box-shadow 0.1s ease;
+  -webkit-transition: border 0.1s ease, text-shadow 0.1s ease, color 0.1s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.1s ease;
+  transition: border 0.1s ease, text-shadow 0.1s ease, color 0.1s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.1s ease;
+  transition: border 0.1s ease, transform 0.2s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
+  transition: border 0.1s ease, transform 0.2s ease, box-shadow 0.1s ease, text-shadow 0.1s ease, color 0.1s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.1s ease;
 }
 .keyboard .key:hover {
-  background-color: #b3aaf0;
+  color: #fa962b;
+  border: 1px solid #fa962b;
 }
 .keyboard .key:active {
   -webkit-transform: translate(3px, 3px);
       -ms-transform: translate(3px, 3px);
           transform: translate(3px, 3px);
   text-shadow: 2px 1px rgb(56, 56, 58);
-  -webkit-box-shadow: 2px 2px 1px rgba(78, 67, 150, 0.6784313725);
-          box-shadow: 2px 2px 1px rgba(78, 67, 150, 0.6784313725);
-  background-color: #54506d;
+  -webkit-box-shadow: 2px 2px rgba(22, 12, 3, 0.9098039216);
+          box-shadow: 2px 2px rgba(22, 12, 3, 0.9098039216);
 }
 .keyboard .key-inactive {
   pointer-events: none;
   -webkit-transform: translate(3px, 3px);
       -ms-transform: translate(3px, 3px);
           transform: translate(3px, 3px);
-  text-shadow: 2px 1px rgb(56, 56, 58);
-  -webkit-box-shadow: 2px 2px 1px rgba(78, 67, 150, 0.6784313725);
-          box-shadow: 2px 2px 1px rgba(78, 67, 150, 0.6784313725);
-  background-color: #54506d;
-  color: rgba(217, 214, 229, 0.71);
+  text-shadow: 2px 1px rgba(78, 67, 150, 0.6784313725);
+  -webkit-box-shadow: 2px 2px rgba(78, 67, 150, 0.6784313725);
+          box-shadow: 2px 2px rgba(78, 67, 150, 0.6784313725);
+  color: #fa962b;
+  border: 1px solid #fa962b;
 }
 
 .modal-wrap {

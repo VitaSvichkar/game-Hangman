@@ -17,6 +17,10 @@ body {
   display: flex;
   justify-content: space-around;
   gap: 20px;
+
+  & > * {
+    flex-basis: 50%;
+  }
 }
 
 canvas {
@@ -26,29 +30,48 @@ canvas {
 ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  font-size: 90px;
+  gap: 15px;
+  font-size: 70px;
   border-radius: 20px;
   color: #ff901a;
   list-style: none;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+
   & > * {
-    margin-bottom: 30px;
+    flex-basis: calc(100% / 3);
     padding: 10px;
   }
 }
 
 .hint-wrap {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  & > * {
+    flex-basis: 50%;
+  }
 }
 
 .hint-accent,
 .mistakes {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
+}
+
+.hint-accent,
+.style-count {
+  color: #fa962b;
 }
 
 .keyboard {
@@ -70,35 +93,35 @@ ul {
     font-size: 25px;
     color: rgb(249, 245, 241);
     text-shadow: 2px 1px rgb(84, 84, 90);
-    width: 50px;
-    height: 50px;
-    background-color: #9a8eeaad;
-    background-color: #9a8eeac8;
-    box-shadow: 5px 5px 1px #4e4396ad;
+    width: 46px;
+    height: 46px;
+    background-color: #141414c8;
+    border: 1px solid rgba(206, 155, 4, 0.348);
+    box-shadow: 5px 5px #160c03e8;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease,
-      box-shadow 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
+    transition: border 0.1s ease, transform 0.2s ease, box-shadow 0.1s ease,
+      text-shadow 0.1s ease, color 0.1s ease;
 
     &:hover {
-      background-color: #b3aaf0;
+      color: #fa962b;
+      border: 1px solid #fa962b;
     }
 
     &:active {
       transform: translate(3px, 3px);
       text-shadow: 2px 1px rgb(56, 56, 58);
-      box-shadow: 2px 2px 1px #4e4396ad;
-      background-color: #54506d;
+      box-shadow: 2px 2px #160c03e8;
     }
   }
 
   .key-inactive {
     pointer-events: none;
     transform: translate(3px, 3px);
-    text-shadow: 2px 1px rgb(56, 56, 58);
-    box-shadow: 2px 2px 1px#4e4396ad;
-    background-color: #54506d;
-    color: rgba(217, 214, 229, 0.71);
+    text-shadow: 2px 1px #4e4396ad;
+    box-shadow: 2px 2px #4e4396ad;
+    color: #fa962b;
+    border: 1px solid #fa962b;
   }
 }
 
@@ -106,6 +129,7 @@ ul {
   position: absolute;
   inset: 0;
   background-color: #191818b5;
+  // background-color: #191818e9;
   display: flex;
   justify-content: center;
   align-items: center;

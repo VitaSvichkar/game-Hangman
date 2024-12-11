@@ -26,7 +26,7 @@ export default function refreshGame(questions) {
     const hint = document.querySelector('.hint-wrap p');
     hint.innerHTML = `<span class="hint-accent">Hint: </span>${gameState.hint}`;
     const mistakes = document.querySelector('.mistakes-wrap');
-    mistakes.innerHTML = `<span class="mistakes">Incorrect guesses: <span class="count">${gameState.count}</span> / 6 </span> `;
+    mistakes.innerHTML = `<span class="mistakes">Incorrect guesses: <span class="style-count"><span class="count">${gameState.count}</span> / 6 </span></span>`;
 
     const chars = document.querySelector('.word-items');
     chars.innerHTML = '';

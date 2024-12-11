@@ -23,7 +23,7 @@ export default function renderPage(questionsArray) {
 
   const secretWord = document.createElement('p');
   secretWord.classList.add('modal-secret-word');
-  secretWord.innerHTML = `<span class="modal-secret-word">rkogirn</span>`;
+  secretWord.innerHTML = `<span class="modal-secret-word"></span>`;
 
   const button = document.createElement('button');
   button.classList.add('modal-btn');
