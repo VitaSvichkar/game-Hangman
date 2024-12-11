@@ -126,7 +126,6 @@ ul {
     cursor: pointer;
     border: none;
     outline: none;
-    font-family: 'Indie Flower', sans-serif;
     font-size: 20px;
     font-weight: bold;
     color: rgb(249, 245, 241);
@@ -149,6 +148,7 @@ ul {
     }
   }
 }
+
 .modal-visible {
   opacity: 1;
   visibility: visible;

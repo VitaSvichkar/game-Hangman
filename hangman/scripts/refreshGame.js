@@ -1,23 +1,43 @@
-import eventKey from './eventKeyAndCheckChar.js';
+// import eventKey from './eventKeyAndCheckChar.js';
 
 export default function refreshGame(questions) {
-  let ind = 0;
-  const answer = questions[ind].answer;
-  const question = questions[ind].hint;
-  const hint = document.querySelector('.hint-wrap p');
-  console.log(question);
-  hint.innerHTML = `<span class="hint-accent">Hint: </span>${question}`;
-  const mistakes = document.querySelector('.mistakes-wrap');
-  mistakes.innerHTML = `<span class="mistakes">Incorrect guesses: <span class="count">0</span> / 6 </span> `;
+  let index = 0;
 
-  const chars = document.querySelector('.word-items');
+  return function () {
+    const gameState = {
+      word: questions[index].answer,
+      count: 0,
+      guessedChars: new Set(),
+      displayedWord: [],
+      isGamePaused: false,
+      isGameWon: false,
+      isGameLost: false,
+    };
 
-  [...answer].forEach((el) => {
-    const item = document.createElement('li');
-    item.classList.add('item');
-    item.innerText = '_';
-    chars.append(item);
-  });
+    const question = questions[index].hint;
+    index += 1;
+    const hint = document.querySelector('.hint-wrap p');
+    console.log(question);
+    hint.innerHTML = `<span class="hint-accent">Hint: </span>${question}`;
+    const mistakes = document.querySelector('.mistakes-wrap');
+    mistakes.innerHTML = `<span class="mistakes">Incorrect guesses: <span class="count">${gameState.count}</span> / 6 </span> `;
 
-  eventKey(answer);
+    const chars = document.querySelector('.word-items');
+    chars.innerHTML = '';
+
+    gameState.displayedWord = Array.from(
+      { length: gameState.word.length },
+      () => {
+        const item = document.createElement('li');
+        item.classList.add('item');
+        item.innerText = '_';
+        return item;
+      }
+    );
+
+    gameState.displayedWord.forEach((item) => chars.append(item));
+    console.log(gameState.displayedWord);
+
+    return gameState;
+  };
 }

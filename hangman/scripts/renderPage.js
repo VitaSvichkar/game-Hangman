@@ -1,14 +1,16 @@
 import refreshGame from './refreshGame.js';
-import { checkChar } from './eventKeyAndCheckChar.js';
+import logic from './logic.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
 
+  // canvas
   const canvas = document.createElement('canvas');
   canvas.width = 600;
   canvas.height = 600;
   const ctx = canvas.getContext('2d');
 
+  // modal
   const modalWrap = document.createElement('div');
   modalWrap.classList.add('modal-wrap');
 
@@ -24,8 +26,8 @@ export default function renderPage(questionsArray) {
 
   const button = document.createElement('button');
   button.classList.add('modal-btn');
-  button.innerText = 'Try again';
 
+  // page
   const wrap = document.createElement('div');
   wrap.classList.add('wrap');
 
@@ -51,7 +53,7 @@ export default function renderPage(questionsArray) {
   modalWrap.append(modal);
   body.append(wrap, modalWrap);
 
-  refreshGame(questionsArray);
+  logic(questionsArray);
 
   // virtual keyboard
   function showKeyboard() {
@@ -66,9 +68,6 @@ export default function renderPage(questionsArray) {
 
   button.addEventListener('click', () => {
     modalWrap.classList.remove('modal-visible');
-  });
-
-  window.addEventListener('keydown', (e) => {
-    checkChar(e.key);
+    refreshGame(questionsArray);
   });
 }
