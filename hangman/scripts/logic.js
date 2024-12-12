@@ -7,12 +7,36 @@ export default function logic(arr) {
   const keyboard = document.querySelector('.keyboard');
   const updateGame = refreshGame(arr);
   let gameState = updateGame();
+  const audio = new Audio('./click.mp3');
 
   window.addEventListener('keydown', (e) => {
-    checkChar(e, gameState);
+    if (modalWrap.classList.contains('modal-visible')) {
+      if (e.key === 'Enter') {
+        newGame();
+      }
+    }
+
+    checkChar(e, gameState, addSound);
   });
 
   modalBtn.addEventListener('click', () => {
+    newGame();
+  });
+
+  keyboard.addEventListener('click', (e) => {
+    if (e.target.classList.contains('key')) {
+      checkChar(e, gameState, addSound);
+    }
+  });
+
+  function addSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  function newGame() {
+    addSound();
+
     modalWrap.classList.remove('modal-visible');
     gameState = updateGame();
     const keyKeyboard = [...document.querySelectorAll('.key')];
@@ -20,11 +44,5 @@ export default function logic(arr) {
     keyKeyboard.forEach((item) => {
       item.classList.remove('key-inactive');
     });
-  });
-
-  keyboard.addEventListener('click', (e) => {
-    if (e.target.classList.contains('key')) {
-      checkChar(e, gameState);
-    }
-  });
+  }
 }

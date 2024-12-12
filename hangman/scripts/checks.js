@@ -1,6 +1,6 @@
 import showModal from './showModal.js';
 
-export function checkChar(e, state) {
+export function checkChar(e, state, sound) {
   const countMistakes = document.querySelector('.count');
   const key = e.key ? e.key.toUpperCase() : e.target.innerText;
   const keyKeyboard = [...document.querySelectorAll('.key')];
@@ -23,6 +23,8 @@ export function checkChar(e, state) {
     if (!/^[A-Z]$/.test(key)) {
       return;
     }
+
+    sound();
 
     if (word[i] === key) {
       state.displayedWord[i].innerText = key;

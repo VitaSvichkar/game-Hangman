@@ -4,6 +4,7 @@ import showKeyboard from './keyboard.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
+  const audio = new Audio('./click.mp3');
 
   // canvas
   const canvas = document.createElement('canvas');
@@ -56,4 +57,9 @@ export default function renderPage(questionsArray) {
 
   showKeyboard();
   logic(questionsArray);
+
+  function addSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
 }
