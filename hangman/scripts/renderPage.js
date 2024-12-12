@@ -1,16 +1,16 @@
 import refreshGame from './refreshGame.js';
 import logic from './logic.js';
 import showKeyboard from './keyboard.js';
+import draw from './drawBody.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
-  const audio = new Audio('./click.mp3');
 
   // canvas
   const canvas = document.createElement('canvas');
+  canvas.id = 'canvas';
   canvas.width = 600;
   canvas.height = 600;
-  const ctx = canvas.getContext('2d');
 
   // modal
   const modalWrap = document.createElement('div');
@@ -57,9 +57,5 @@ export default function renderPage(questionsArray) {
 
   showKeyboard();
   logic(questionsArray);
-
-  function addSound() {
-    audio.currentTime = 0;
-    audio.play();
-  }
+  // draw();
 }

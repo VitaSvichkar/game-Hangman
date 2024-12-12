@@ -12,22 +12,6 @@ renderPage(questions);
 // ctx.fillStyle = 'red';
 // ctx.fillRect(0, 0, 400, 400);
 
-//  |
-// ctx.beginPath();
-// ctx.moveTo(360, 80);
-// ctx.lineTo(360, 20);
-// //  /
-// ctx.lineTo(170, 20);
-// ctx.lineTo(90, 100);
-// ctx.lineTo(170, 20);
-// // |
-// ctx.lineTo(90, 20);
-// ctx.lineTo(90, 480);
-// //  __
-// ctx.lineTo(20, 480);
-// ctx.lineTo(490, 480);
-// ctx.lineWidth = 10;
-// ctx.stroke();
 // // head
 // ctx.beginPath();
 // ctx.arc(360, 115, 35, 0, 2 * Math.PI);

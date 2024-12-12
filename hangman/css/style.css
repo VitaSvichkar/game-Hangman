@@ -28,10 +28,6 @@ body {
       flex-basis: 50%;
 }
 
-canvas {
-  background-color: rebeccapurple;
-}
-
 ul {
   display: -webkit-box;
   display: -ms-flexbox;
