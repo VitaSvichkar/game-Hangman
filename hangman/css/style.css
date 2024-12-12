@@ -208,6 +208,13 @@ ul {
   width: 400px;
   max-width: 100%;
   border-radius: 10px;
+  -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+          transform: scale(0.7);
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
 }
 .modal .modal-result {
   font-size: 30px;
@@ -246,4 +253,9 @@ ul {
 .modal-visible {
   opacity: 1;
   visibility: visible;
+}
+.modal-visible .modal {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }/*# sourceMappingURL=style.css.map */
