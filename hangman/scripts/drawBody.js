@@ -1,17 +1,17 @@
 export default function draw(ctx) {
   ctx.beginPath();
-  ctx.moveTo(360, 160);
-  ctx.lineTo(360, 100);
+  ctx.moveTo(300, 100);
+  ctx.lineTo(300, 10);
   //  /
-  ctx.lineTo(170, 100); // /
-  ctx.lineTo(90, 200); // /
-  ctx.lineTo(170, 100); // _
+  ctx.lineTo(100, 10); // /
+  ctx.lineTo(10, 130); // /
+  ctx.lineTo(100, 10); // _
   // |
-  ctx.lineTo(90, 100);
-  ctx.lineTo(90, 500);
+  ctx.lineTo(10, 10);
+  ctx.lineTo(10, 450);
   //  __
-  ctx.lineTo(20, 500);
-  ctx.lineTo(490, 500);
+  ctx.lineTo(20, 450);
+  ctx.lineTo(350, 450);
   ctx.lineWidth = 10;
   ctx.strokeStyle = ' rgb(249, 245, 241';
   ctx.stroke();
@@ -21,44 +21,45 @@ export default function draw(ctx) {
       case 1:
         // head
         ctx.beginPath();
-        ctx.arc(360, 192, 33, 0, 2 * Math.PI);
-        ctx.lineWidth = 5;
+        ctx.arc(300, 133, 33, 0, 2 * Math.PI);
+        ctx.lineWidth = 6;
         ctx.strokeStyle = '#fa962b';
         ctx.stroke();
         break;
       case 2:
         // body
         ctx.beginPath();
-        ctx.moveTo(360, 224);
-        ctx.lineTo(360, 340);
+        ctx.moveTo(300, 163);
+        ctx.lineTo(300, 290);
         ctx.stroke();
         break;
       case 3:
         // left hand
         ctx.beginPath();
-        ctx.moveTo(360, 250);
-        ctx.lineTo(310, 310);
+        ctx.moveTo(300, 190);
+        ctx.lineTo(250, 260);
         ctx.stroke();
         break;
+
       case 4:
         // right hand
         ctx.beginPath();
-        ctx.moveTo(360, 250);
-        ctx.lineTo(410, 310);
+        ctx.moveTo(300, 190);
+        ctx.lineTo(350, 260);
         ctx.stroke();
         break;
       case 5:
         // left leg
         ctx.beginPath();
-        ctx.moveTo(360, 338);
-        ctx.lineTo(300, 390);
+        ctx.moveTo(300, 288);
+        ctx.lineTo(250, 370);
         ctx.stroke();
         break;
       case 6:
         // right leg
         ctx.beginPath();
-        ctx.moveTo(360, 338);
-        ctx.lineTo(420, 390);
+        ctx.moveTo(300, 288);
+        ctx.lineTo(340, 370);
         ctx.stroke();
         break;
       default:

@@ -1,16 +1,17 @@
-import refreshGame from './refreshGame.js';
 import logic from './logic.js';
 import showKeyboard from './keyboard.js';
-import draw from './drawBody.js';
 
 export default function renderPage(questionsArray) {
   const body = document.querySelector('body');
 
   // canvas
+  const canvasWrap = document.createElement('div');
+  canvasWrap.classList.add('canvas-wrap');
+
   const canvas = document.createElement('canvas');
   canvas.id = 'canvas';
-  canvas.width = 600;
-  canvas.height = 600;
+  canvas.width = 355;
+  canvas.height = 490;
 
   // modal
   const modalWrap = document.createElement('div');
@@ -50,12 +51,12 @@ export default function renderPage(questionsArray) {
 
   hintWrap.append(hint, mistakesWrap);
   content.append(chars, hintWrap, keyboard);
-  wrap.append(canvas, content);
+  canvasWrap.append(canvas);
+  wrap.append(canvasWrap, content);
   modal.append(resultText, secretWord, button);
   modalWrap.append(modal);
   body.append(wrap, modalWrap);
 
   showKeyboard();
   logic(questionsArray);
-  // draw();
 }
