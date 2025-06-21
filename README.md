@@ -1,5 +1,7 @@
 # Game Hangman
 
+![Game Hangman preview screenshot](https://github.com/user-attachments/assets/ebd70bfa-2500-4cf5-b9bd-dddd1da573d4)
+
 **Deploy** [Live Demo](https://rolling-scopes-school.github.io/vitasvichkar-JSFE2024Q4/hangman/index.html)
 
 **Key Features:**
@@ -13,4 +15,4 @@
 * Clicked/pressed letters get disabled
 * Modal window appears on win or loss with message, secret word, and “play again” button
 * “Play again” button resets game state and loads new word
-![Game Hangman preview screenshot](https://github.com/user-attachments/assets/ebd70bfa-2500-4cf5-b9bd-dddd1da573d4)
+
