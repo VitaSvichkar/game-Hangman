@@ -1,14 +1,15 @@
 import logic from './logic.js';
 import showKeyboard from './keyboard.js';
+import { Questions } from '../src/types.js';
 
-export default function renderPage(questionsArray) {
-  const body = document.querySelector('body');
+export default function renderPage(questionsArray: Questions[]) {
+  const body = document.querySelector<HTMLBodyElement>('body')!;
 
   // canvas
   const canvasWrap = document.createElement('div');
   canvasWrap.classList.add('canvas-wrap');
 
-  const canvas = document.createElement('canvas');
+  const canvas: HTMLCanvasElement = document.createElement('canvas');
   canvas.id = 'canvas';
   canvas.width = 355;
   canvas.height = 490;
@@ -24,7 +25,7 @@ export default function renderPage(questionsArray) {
   resultText.classList.add('modal-result');
 
   const secretWord = document.createElement('p');
-  secretWord.classList.add('modal-secret-word');
+  secretWord.classList.add('modal-secret-word'); // два одинаковых класса здесь и на спане ниже, уточнить и убрать
   secretWord.innerHTML = `<span class="modal-secret-word"></span>`;
 
   const button = document.createElement('button');
