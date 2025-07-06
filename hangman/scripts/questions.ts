@@ -1,4 +1,6 @@
-export const questions = [
+import { Questions } from './../src/types';
+
+export const questions: Questions[] = [
   {
     hint: 'Who is the lead singer of the band Queen?',
     answer: 'Mercury',

@@ -1,14 +1,15 @@
 import logic from './logic.js';
 import showKeyboard from './keyboard.js';
+import { Questions } from '../src/types.js';
 
-export default function renderPage(questionsArray) {
-  const body = document.querySelector('body');
+export default function renderPage(questionsArray: Questions[]) {
+  const body = document.querySelector<HTMLBodyElement>('body')!;
 
   // canvas
   const canvasWrap = document.createElement('div');
   canvasWrap.classList.add('canvas-wrap');
 
-  const canvas = document.createElement('canvas');
+  const canvas: HTMLCanvasElement = document.createElement('canvas');
   canvas.id = 'canvas';
   canvas.width = 355;
   canvas.height = 490;

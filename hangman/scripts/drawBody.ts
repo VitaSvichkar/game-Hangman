@@ -1,4 +1,4 @@
-export default function draw(ctx) {
+export default function draw(ctx: CanvasRenderingContext2D) {
   ctx.beginPath();
   ctx.moveTo(300, 100);
   ctx.lineTo(300, 10);
@@ -16,7 +16,7 @@ export default function draw(ctx) {
   ctx.strokeStyle = ' rgb(249, 245, 241';
   ctx.stroke();
 
-  return function (count) {
+  return function (count: number): void {
     switch (count) {
       case 1:
         // head

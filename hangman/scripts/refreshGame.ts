@@ -1,10 +1,10 @@
-// import eventKey from './eventKeyAndCheckChar.js';
+import { GameState, Questions } from '../src/types';
 
-export default function refreshGame(questions) {
-  let index = 0;
+export default function refreshGame(questions: Questions[]) {
+  let index: number = 0;
 
-  return function () {
-    const gameState = {
+  return function (): GameState {
+    const gameState: GameState = {
       word: questions[index].answer,
       hint: questions[index].hint,
       count: 0,
@@ -18,17 +18,16 @@ export default function refreshGame(questions) {
     index += 1;
 
     if (index >= questions.length) {
-      console.log(index);
       index = 0;
-      console.log(index);
     }
 
-    const hint = document.querySelector('.hint-wrap p');
+    const hint = document.querySelector<HTMLDivElement>('.hint-wrap p')!;
     hint.innerHTML = `<span class="hint-accent">Hint: </span>${gameState.hint}`;
-    const mistakes = document.querySelector('.mistakes-wrap');
+
+    const mistakes = document.querySelector<HTMLDivElement>('.mistakes-wrap')!;
     mistakes.innerHTML = `<span class="mistakes">Incorrect guesses: <span class="style-count"><span class="count">${gameState.count}</span> / 6 </span></span>`;
 
-    const chars = document.querySelector('.word-items');
+    const chars = document.querySelector<HTMLDivElement>('.word-items')!;
     chars.innerHTML = '';
 
     gameState.displayedWord = Array.from(
@@ -42,8 +41,6 @@ export default function refreshGame(questions) {
     );
 
     gameState.displayedWord.forEach((item) => chars.append(item));
-    console.log(gameState.displayedWord);
-
     return gameState;
   };
 }

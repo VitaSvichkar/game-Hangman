@@ -1,6 +1,6 @@
-export default function showKeyboard() {
-  const keyboard = document.querySelector('.keyboard');
-  const keys = [
+export default function showKeyboard(): void {
+  const keyboard = document.querySelector<HTMLDivElement>('.keyboard')!;
+  const keys: string[] = [
     'Q',
     'W',
     'E',
@@ -32,7 +32,7 @@ export default function showKeyboard() {
   keys.forEach((el) => {
     const keyWrap = document.createElement('div');
     keyWrap.classList.add('key');
-    keyWrap.innerText = el;
+    keyWrap.textContent = el;
     keyboard.append(keyWrap);
   });
 }
