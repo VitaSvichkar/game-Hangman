@@ -2,7 +2,7 @@
 
 ![Game Hangman preview screenshot](https://github.com/user-attachments/assets/ebd70bfa-2500-4cf5-b9bd-dddd1da573d4)
 
-**Deploy** [Live Demo](https://rolling-scopes-school.github.io/vitasvichkar-JSFE2024Q4/hangman/index.html)
+**Deploy** [Live Demo](https://vitasvichkar.github.io/game-Hangman/)
 
 **Key Features:**
 * Responsive and adaptive UI from 1440px to 360px viewport
